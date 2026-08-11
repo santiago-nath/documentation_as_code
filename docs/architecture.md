@@ -18,13 +18,14 @@
 
 ## 2. Diagrama C2 (Nível de Containers)
 
+```mermaid
 graph TD
     User([Usuário / Cliente]) -->|HTTPS / TLS| Ingress[Ingress Controller - Nginx]
     Ingress -->|HTTP / Port 8080| App[API Container - FastAPI]
     App -->|TCP / Port 5432| DB[(PostgreSQL Gerenciado)]
     App -->|HTTP / Port 9090| Prometheus[Prometheus Server]
     Prometheus -->|TCP| Grafana[Grafana Dashboard]
-
+```
 
 **🔍 Entendendo o diagrama:**
 - `graph TD` = Top-Down (de cima para baixo)
